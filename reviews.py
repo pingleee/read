@@ -3,9 +3,6 @@ count = 0
 with open('reviews.txt', 'r') as f:
     for line in f:
         data.append(line)
-        count += 1
-        if count % 1000 == 0:
-            print(len(data))
 print('Finished. Total amount is :', len(data))
 
 # My tried ver.
@@ -21,4 +18,12 @@ print(average)
 sum_len = 0
 for d in data:
     sum_len += len(d)
-print('Len Average is ', sum_len/len(data))
+print('Len Average is ', sum_len / len(data))
+
+#filter len < 100
+new = []
+for d in data:
+    if len(d) < 100:
+        new.append(d)
+print('lenth under 100 char are :', len(new))
+print('No.1 is:\n', new[0])
