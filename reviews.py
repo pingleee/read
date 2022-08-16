@@ -6,7 +6,12 @@ with open('reviews.txt', 'r') as f:
         count += 1
         if count % 1000 == 0:
             print(len(data))
-print(len(data))
-print(data[0])
-print('------------')
-print(data[1])
+print('Finished. Total amount is :', len(data))
+
+t = 0
+total = 0
+while t < len(data):
+    total = total + len(data[t])
+    t = t + 1
+average = total / len(data)
+print(average)
